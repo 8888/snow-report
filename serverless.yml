@@ -60,6 +60,8 @@ plugins:
 functions:
   fetch:
     handler: handler.fetch
+    events:
+      - http: GET fetch
 
 package:
   exclude:
