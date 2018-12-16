@@ -21,7 +21,7 @@ def fetch(event, context):
     result = query.run(mountains)
     response = {
         "statusCode": 200,
-        "body": result
+        "body": json.dumps(result)
     }
 
     return response
