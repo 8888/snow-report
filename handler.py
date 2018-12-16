@@ -1,14 +1,27 @@
 import json
+from query import Query
+
+mountains = [
+    {
+        'name': 'Killington',
+        'url': 'https://www.onthesnow.com/vermont/killington-resort/skireport.html'
+    },
+    {
+        'name': 'Hunter',
+        'url': 'https://www.onthesnow.com/new-york/hunter-mountain/skireport.html'
+    },
+    {
+        'name': 'Camelback',
+        'url': 'https://www.onthesnow.com/pennsylvania/camelback-mountain-resort/skireport.html'
+    }
+]
 
 def fetch(event, context):
-    body = {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "input": event
-    }
-
+    query = Query()
+    result = query.run(mountains)
     response = {
         "statusCode": 200,
-        "body": json.dumps(body)
+        "body": result
     }
 
     return response
