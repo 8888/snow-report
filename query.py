@@ -15,11 +15,16 @@ class Query():
         sanitized = list(map(lambda value: re.sub(regex, '', value), result))
         return sanitized
 
+    def map(self, runs, lifts, acres):
+        return {'runs': runs, 'lifts': lifts, 'acres': acres}
+
     def _run(self, mountain):
         content = self.get_raw_content(mountain['url'])
+        parsed_content = self.parse(content)
+        mapped_content = self.map(*parsed_content)
         report = {
             'name': mountain['name'],
-            'report': self.parse(content)
+            'report': mapped_content
         }
         return report
 
