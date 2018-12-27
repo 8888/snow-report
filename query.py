@@ -12,8 +12,7 @@ class Query():
     def parse(self, content):
         result = re.findall(r'<p class="open value">(.*?)</p>', content)
         regex = re.compile(r"(<span>)|(</span>)")
-        sanitized = list(map(lambda value: re.sub(regex, '', value), result))
-        return sanitized
+        return [re.sub(regex, '', value) for value in result]
 
     def map(self, runs, lifts, acres):
         return {'runs': runs, 'lifts': lifts, 'acres': acres}
@@ -29,4 +28,4 @@ class Query():
         return report
 
     def run(self, mountains):
-        return list(map(lambda mountain: self._run(mountain), mountains))
+        return [self._run(mountain) for mountain in mountains]
