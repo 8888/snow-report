@@ -13,6 +13,10 @@ mountains = [
     {
         'name': 'Camelback',
         'url': 'https://www.onthesnow.com/pennsylvania/camelback-mountain-resort/skireport.html'
+    },
+    {
+        'name': 'Windham',
+        'url': 'https://www.onthesnow.com/new-york/windham-mountain/skireport.html'
     }
 ]
 
