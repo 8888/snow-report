@@ -30,8 +30,13 @@ showResult:
 ![snow-report shortcuts REPORT](/assets/shortcutsReport.JPG?raw=true)
 
 ## Deploy
+Deploy from serverless straight to AWS:
 ```
 $ serverless deploy
+```
+Create a zip to upload to AWS yourself:
+```
+$ serverless package
 ```
 
 ## curl
